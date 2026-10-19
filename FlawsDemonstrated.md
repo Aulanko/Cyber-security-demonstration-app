@@ -10,18 +10,18 @@
 ![Login the new user](screenshots/Flaw1/image%20copy.png)
 
 
-Create a new note with that user:
+### Create a new note with that user:
 
 ![Going to notes section](screenshots/Flaw1/image%20copy%203.png)
 
 
-New note has been created now:
+### New note has been created now:
 ![Making a new Note](screenshots/Flaw1/image%20copy%204.png)
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%205.png)
 
 
-Lets create another account and make a note with that one too:
+### Lets create another account and make a note with that one too:
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%207.png)
 
@@ -33,16 +33,16 @@ Lets create another account and make a note with that one too:
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%2011.png)
 
-Here comes the Flaw:
+### Here comes the Flaw:
 
-The user is able to see and even delete another users notes just by changing the Note ID value from the URL:
+### The user is able to see and even delete another users notes just by changing the Note ID value from the URL:
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%2012.png)
 
-This applies for all of the users.
+### This applies for all users.
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%2013.png)
 
-and after deleting a note:
+### And after deleting a note:
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%2014.png)
