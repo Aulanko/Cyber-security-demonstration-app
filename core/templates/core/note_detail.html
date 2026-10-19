@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h1>{{ note.title }}</h1>
+<p>{{ note.content }}</p>
+<p><small>Owner: {{ note.owner.username }}</small></p>
+<form action="{% url 'note_delete' note.id %}" method="post">{% csrf_token %}<button>Delete</button></form>
+{% endblock %}

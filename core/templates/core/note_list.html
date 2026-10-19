@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h1>My notes</h1>
+<form action="{% url 'search' %}" method="get">
+  <input name="q" placeholder="Search titles"><button>Search</button>
+</form>
+<ul>
+  {% for n in notes %}
+    <li><a href="{% url 'note_detail' n.id %}">{{ n.title }}</a></li>
+  {% empty %}
+    <li>No notes yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
