@@ -46,3 +46,5 @@
 ### And after deleting a note:
 
 ![Making a new Note](screenshots/Flaw1/image%20copy%2014.png)
+
+
