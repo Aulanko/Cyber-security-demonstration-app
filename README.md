@@ -2,6 +2,8 @@
 
 A small Django "private notes" application built for educational purposes. It deliberately contains five security flaws from the OWASP Top 10 (2021). Each flaw is marked in the source code with a `# FLAW n` comment, and the corresponding fix is included next to it as commented-out code (`# FIX n`).
 
+### See the demonstrations in the Demonstrations Folder
+
 
 
 ## Flaws included
