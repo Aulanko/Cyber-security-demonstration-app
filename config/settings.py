@@ -23,13 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w%yt0z26m2qn_+dsa3ihak4yi4+t)ug$ljn&pgcj$4gk@1g5c9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = True
 
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # FIX:
-DEBUG = False
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+#DEBUG = False
+#ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "axes",
 ]
 
-#PASSWORD_HASHERS = ["core.hashers.UnsaltedMD5Hasher"]
+PASSWORD_HASHERS = ["core.hashers.UnsaltedMD5Hasher"]
 
 # Flaw 2 fix: removed the above line
 
@@ -57,17 +57,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "axes.middleware.AxesMiddleware",
+    #"axes.middleware.AxesMiddleware",
 ]
 
-AUTHENTICATION_BACKENDS = [
-    "axes.backends.AxesStandaloneBackend",           
-    "django.contrib.auth.backends.ModelBackend",
-]
+#AUTHENTICATION_BACKENDS = [
+#    "axes.backends.AxesStandaloneBackend",           
+#    "django.contrib.auth.backends.ModelBackend",
+#]
 
-AXES_LOCKOUT_PARAMETERS = [["ip_address", "username"]]
-AXES_FAILURE_LIMIT = 5  # lock out after 3 failed attempts
-AXES_COOLOFF_TIME = 0.05 #about 3 min, but can be set to 1 -> an hour
+#AXES_LOCKOUT_PARAMETERS = [["ip_address", "username"]]
+#AXES_FAILURE_LIMIT = 5  # lock out after 3 failed attempts
+#AXES_COOLOFF_TIME = 0.05 #about 3 min, but can be set to 1 -> an hour
+
+#Fix for making rate limiting, comment out the above "axes" related comments
 
 ROOT_URLCONF = 'config.urls'
 
@@ -103,46 +105,46 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    }, 
-] 
+#AUTH_PASSWORD_VALIDATORS = [
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+#    }, 
+#] 
 
 # Flaw 4 Fix Uncomment the above password validations list and uncomment the empty list below
-#AUTH_PASSWORD_VALIDATORS = []
+AUTH_PASSWORD_VALIDATORS = []
 
 # Overly long cookie expiry date
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365
 
 # FLAW 5: no LOGGING configuration, so security events are not recorded anywhere
 # FIX 5: log security events to a file
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "std": {"format": "%(asctime)s %(levelname)s %(name)s %(message)s"},
-    },
-    "handlers": {
-        "file": {
-            "class": "logging.FileHandler",
-            "filename": BASE_DIR / "security.log",
-            "formatter": "std",
-        },
-    },
-    "loggers": {
-        "core.security": {"handlers": ["file"], "level": "INFO"},
-    },
-}
+#LOGGING = {
+#    "version": 1,
+#    "disable_existing_loggers": False,
+#    "formatters": {
+#        "std": {"format": "%(asctime)s %(levelname)s %(name)s %(message)s"},
+#    },
+#    "handlers": {
+#        "file": {
+#            "class": "logging.FileHandler",
+#            "filename": BASE_DIR / "security.log",
+#            "formatter": "std",
+#        },
+#    },
+#    "loggers": {
+#        "core.security": {"handlers": ["file"], "level": "INFO"},
+#    },
+#}
 
 LOGIN_URL = "/login/"
 
