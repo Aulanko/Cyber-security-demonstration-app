@@ -15,6 +15,7 @@ A small Django "private notes" application built for educational purposes. It de
 | 3 | A03: Injection | `core/views.py`: `search` |
 | 4 | A07: Identification and Authentication Failures | `core/views.py`: `login_view`, `config/settings.py`: `AUTH_PASSWORD_VALIDATORS`, `SESSION_COOKIE_AGE` |
 | 5 | A09: Security Logging and Monitoring Failures | `core/views.py` (`login_view`, `note_delete`), `config/settings.py`: `LOGGING` |
+| 6 | A05: Security Misconfiguration | `config/settings.py`: `DEBUG` |
 
 
 

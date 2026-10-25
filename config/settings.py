@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "core",
-    "axes",
+   # "axes",
 ]
 
 PASSWORD_HASHERS = ["core.hashers.UnsaltedMD5Hasher"]
